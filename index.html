@@ -40,10 +40,10 @@
       }
     }
 
-    genbtn.addEventListener("click", () => {
+    genbtn.addEventListener("click", async() => {
       if(inputbox.value.length >= 5) {
-      let codelink = linkfunc(inputbox.value, searchtext);
-      console.log(openlink + codelink);
+      let codelink = await linkfunc(inputbox.value, searchtext);
+      inputbox.value = "";
 
       msg.innerText = "Link Generated successfully !"
       setTimeout(() => {
